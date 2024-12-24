@@ -43,27 +43,85 @@ Sebelum memastikan JDK dapat di gunakan di mana saja pastikan untuk mengingat di
 
 Gunakan salah satu editor berikut:
 
-- **VS Code:** [Download VS code](https://code.visualstudio.com/)
+- **Visual Studio Code:** [Download Visual Studio code](https://code.visualstudio.com/)
     - Tambahkan extension Java Extension Pack
 - **Intellij IDEA:** [Download Intellij IDEA](https://www.jetbrains.com/idea/)
 - **NetBeans:** [Download NetBeans](https://netbeans.apache.org/front/main/index.html)
 
-### 4. Menjalankan Program Java
+### 4. Buat Project
 
-**VS code:**
+**Visual Studio Code:**
+
+1.  Buka Visual Studio Code
+
+2.  Tekan command ctrl > shift > p untuk membuka command pallete
+
+3.  Cari Java create program
+    ![Create Java Program](assets/1.png)
+
+4.  Pilih No build tools
+    ![No Build Tools](assets/2.png)
+
+5.  Tentukan path project di simpan
+    ![Path Project](assets/3.png)
+
+6.  Masukkan nama project
+    ![Nama Project](assets/4.png)
+
+### 5. Struktur Folder
+
+1.  Setelah membuat project baru anda akan mendapatkan  struktur folder seperti berikut
+
+    ```bash
+    .
+    └── App/
+        ├── .vscode/
+        │   └── setting.json
+        ├── lib
+        ├── src/
+        │   └── App.java
+        └── README.md
+
+2.  Tambahkan folder bin sehingga menjadi:
+
+    ```bash
+    .
+    └── App/
+        ├── .vscode/
+        │   └── setting.json
+        ├── bin
+        ├── lib
+        ├── src/
+        │   └── App.java
+        └── README.md
+
+**Penjelasan Folder:**
+
+1.  .vscode => Di gunakan untuk mengedit pengaturan dari visual studio code dalam project yang sedang di kerjakan.
+
+2.  bin => Di gunakan untuk menyimpan hasil dari meng compile file.
+
+3.  lib => Di gunakan untuk menyimpan library dari project.
+
+4.  src => Di gunakan untuk menyimpan source code dari project.
+
+### 6. Menjalankan Program java
+
+**Visual Studio code:**
 
 1. Buka terminal/command prompt.
    
-2. Navigasikan ke direktori tempat file .java Anda disimpan.
+2. Navigasikan ke direktori project anda.
+   ```bash
+   D:\PROGRAMMER\language\JAVA\App
    
 3. Compile program java:
     ```bash
-    javac [NamaProgram].java
+    javac -d bin src/App.java
     
 4. Jalankan program java:
     ```bash
-    java [namaProgram]
+    java -cp bin App
 
 ## 🧩 Catatan Tambahan
 Jika Anda mengalami masalah saat setup atau menjalankan program, silakan ajukan pertanyaan melalui Issues di repository ini.
-
