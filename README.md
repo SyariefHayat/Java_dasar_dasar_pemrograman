@@ -121,7 +121,7 @@ Gunakan salah satu editor berikut:
     
 4. Jalankan program java:
     ```bash
-    java -cp bin App
+    java -cp bin src.App
 
 ## 🧩 Catatan Tambahan
 Jika Anda mengalami masalah saat setup atau menjalankan program, silakan ajukan pertanyaan melalui Issues di repository ini.
