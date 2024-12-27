@@ -1,18 +1,24 @@
-## Getting Started
+### PENJELASAN
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Dalam bab ini kita membuat file **App.java**, yang di gunakan untuk menampilkan "Hello, World!" ke layar.
 
-## Folder Structure
+### SYNTAX
 
-The workspace contains two folders by default, where:
+1.  **Package src;**
+    - Baris ini mendefinisikan bahwa file App.java adalah bagian dari package bernama src.
+    - Package digunakan untuk mengorganisasi kode dalam proyek Java, seperti folder untuk menyimpan file.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+2.  **public class App {...}**
+    - Setiap baris kode yang berjalan di Java harus berada di dalam class.
+    - Baris ini mendefinisikan sebuah kelas bernama App.
+    - Nama file harus sama dengan nama kelas karena Java mewajibkan nama file .java sesuai dengan nama kelas publik.
+    - nama kelas harus selalu dimulai dengan huruf kapital pertama.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+3.  **public static void main(String[] args){...}**
+    - Public : Method ini dapat diakses dari mana saja.
+    - Static : Method ini milik kelas (App) dan dapat dijalankan tanpa membuat objek kelas terlebih dahulu.
+    - Void : Method ini tidak mengembalikan nilai apa pun.
+    - Main : Nama dari method ini
+    - String[] args : Parameter ini digunakan untuk menerima argumen dari command line.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Ini adalah entry point atau titik awal eksekusi program Java. Jika method main tidak ada dalam di dalam program maka akan terjadi error
