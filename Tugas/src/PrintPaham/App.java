@@ -15,7 +15,7 @@ public class App {
         Scanner userInput = new Scanner(System.in);
 
         // mengambil input dari user
-        System.out.print("Masukkan looping kata: ");
+        System.out.print("Masukkan jumlah looping kata: ");
         int input = userInput.nextInt();
 
         // looping kata
