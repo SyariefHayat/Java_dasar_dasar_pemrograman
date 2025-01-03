@@ -6,6 +6,7 @@ Folder ini berisi penjelasan singkat dari tugas yang saya dapat di kuliah.
 - [📘 Catatan Tugas](#-catatan-tugas)
   - [Daftar Tugas](#daftar-tugas)
     - [1. Program Pembayaran Spp](#1-program-pembayaran-spp)
+    - [2. Program Print Paham](#2-program-print-paham)
 
 ### 1. Program Pembayaran Spp
 
@@ -97,3 +98,36 @@ Folder ini berisi penjelasan singkat dari tugas yang saya dapat di kuliah.
         System.out.println("Kurang            : Rp. " + df.format(kurang));
         System.out.println("================================================");
         System.out.println("Status Pembayaran : " + statusPembayaran);
+
+### 2. Program Print Paham
+
+1. **Pertanyaan:**
+    - Buatlah aplikasi untuk menampilkan teks “PAHAM” sebanyak keinginan user.
+
+2. **Penjelasan Program:**
+   1. Mendapatkan input dari user
+        ```java
+        // panggil class Scanner
+        import java.util.Scanner;
+
+        // membuat class object baru dengan nama userInput
+        Scanner userInput = new Scanner(System.in);
+
+        // mengambil input dari user
+        System.out.print("Masukkan jumlah looping kata: ");
+        int input = userInput.nextInt();
+    
+    - **Penjelasan:**
+        - System.in adalah cara Scanner untuk mendapatkan input user dari keyboard
+
+        - nextInt() adalah method Scanner yang di gunakan untuk memasukkan input user ke dalam variabel integer
+
+   2. Looping kata berdasarkan input
+        ```java
+        // looping kata
+        for(int i = 1; i <= input; i++) {
+            System.out.println("Looping ke -" + i + " : " + word);
+        }
+
+    - **Penjelasan:**
+        - Melakukan looping dengan kondisi, jika i <= input maka cetak "Looping ke -1 : Paham"
