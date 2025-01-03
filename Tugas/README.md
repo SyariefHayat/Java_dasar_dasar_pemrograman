@@ -40,6 +40,9 @@ Folder ini berisi penjelasan singkat dari tugas yang saya dapat di kuliah.
 
     - **Penjelasan:**
         - Scanner dalam java di gunakan untuk membaca input dari user.
+        - System.in adalah cara Scanner untuk mendapatkan input user dari keyboard
+        - nextLine() di gunakan untuk membaca input dari satu line
+        - nextByte() di gunakan untuk membaca data byte dari user
 
    2. Input nominal pembayaran user
         ```java
@@ -118,8 +121,8 @@ Folder ini berisi penjelasan singkat dari tugas yang saya dapat di kuliah.
         int input = userInput.nextInt();
     
     - **Penjelasan:**
+        - Scanner dalam java di gunakan untuk membaca input dari user.
         - System.in adalah cara Scanner untuk mendapatkan input user dari keyboard
-
         - nextInt() adalah method Scanner yang di gunakan untuk memasukkan input user ke dalam variabel integer
 
    2. Looping kata berdasarkan input
