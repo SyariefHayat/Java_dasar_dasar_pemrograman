@@ -1,127 +1,136 @@
-# 📚 Hasil Pembelajaran Java
+# 📘 Catatan Tugas
 
-Repository ini berisi hasil belajar saya tentang pemrograman Java selama kuliah.
+Folder ini berisi penjelasan singkat dari tugas yang saya dapat di kuliah.
 
-## ⚙️ Setup Sebelum Menjalankan Java
+## Daftar Tugas
+- [📘 Catatan Tugas](#-catatan-tugas)
+  - [Daftar Tugas](#daftar-tugas)
+    - [1. Program Pembayaran Spp](#1-program-pembayaran-spp)
+    - [2. Program Print Paham](#2-program-print-paham)
 
-### 1. Install JDK
+### 1. Program Pembayaran Spp
 
-1. **Unduh JDK**
-    - Kunjungi situs resmi [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) atau gunakan [Open JDK](https://jdk.java.net/).
-    - Pilih versi JDK sesuai kebutuhan, disarankan minimal JDK 17 (LTS).
-  
-2. **Install JDK**
-   - Ekstrak file archive ke direktori pilihan.
+1. **Pertanyaan:**
+   - Nominal spp 2.900.000
+   - Jika pembayaran > spp "Lunas"
+   - Jika pembayaran < spp "Belum Lunas"
+   - Menampilkan biodata user
 
-### 2. Set Environment Variable (Path)
+2. **Penjelasan Program:**
+   1. Mendapatkan biodata user :
+        ```java
+        // panggil class Scanner
+        import java.util.Scanner;
 
-Sebelum memastikan JDK dapat di gunakan di mana saja pastikan untuk mengingat dimana file direktori JDK di simpan
+        // membuat class object baru dengan nama userInput
+        Scanner userInput = new Scanner(System.in);
 
-**Windows:**
+        // Input Biodata User
+        System.out.print("Masukkan Nama: ");
+        String nama = userInput.nextLine();
 
-1. Buka System Properties > Environment Variables > System Variables
-   
-2. Tambahkan path JDK ke dalam Path:
-    ```bash
-    C:\Program Files\java\jdk-23.0.1\bin
+        System.out.print("Masukkan NIM: ");
+        String nim = userInput.nextLine();
+
+        System.out.print("Masukkan Prodi: ");
+        String prodi = userInput.nextLine();
+
+        System.out.print("Masukkan Semester: ");
+        byte semester = userInput.nextByte();
+
+    - **Penjelasan:**
+        - Scanner dalam java di gunakan untuk membaca input dari user.
+        - System.in adalah cara Scanner untuk mendapatkan input user dari keyboard
+        - nextLine() di gunakan untuk membaca input dari satu line
+        - nextByte() di gunakan untuk membaca data byte dari user
+
+   2. Input nominal pembayaran user
+        ```java
+        // Input Pembayaran
+        System.out.print("Masukkan jumlah pembayaran SPP: Rp. ");
+        double pembayaran = userInput.nextDouble();
+
+    - **Penjelasan:**
+        - Menggunakan variabel "double" agar bisa menerima pembayaran dengan nominal yang besar
+
+   3. Cek status Pembayaran
+        ```java
+        // Cek Status Pembayaran
+        if (pembayaran > nominalSpp) {
+            kembali = pembayaran - nominalSpp;
+            statusPembayaran = "Lunas";
+        } else if (pembayaran < nominalSpp) {
+            kurang = nominalSpp - pembayaran;
+            statusPembayaran = "Belum Lunas";
+        } else {
+            statusPembayaran = "Lunas"; 
+        }
+
+    - **Penjelasan:**
+        - Jika pembayaran > nominalSpp maka lakukan pengurangan dari pembayaran - nominalSpp untuk mendapatkan uang kembalian user
+
+        - Jika pembayaran < nominalSpp maka lakukan pengurangan dari nominalSpp - pembayaran
     
-3. Simpan dan restart terminal
-   
-4. Buka terminal/command prompt dan ketik:
-    ```bash
-    java -version
-    javac -version
+        - Jika pembayaran == nominalSpp maka inisialisasi statusPembayaran dengan "Lunas"  
 
-5. Output yang di harapkan:
-    ```bash
-    openjdk version "23.0.1" 2024-10-15
-    OpenJDK Runtime Environment (build 23.0.1+11-39)
-    OpenJDK 64-Bit Server VM (build 23.0.1+11-39, mixed mode, sharing)
-    javac 23.0.1
+   4. Ubah format decimal
+        ```java
+        // import class DecimalFormat
+        import java.text.DecimalFormat;
 
-### 3. Install Editor/IDE untuk java
+        // membuat class object baru dengan nama df
+        DecimalFormat df = new DecimalFormat("#,###");
 
-Gunakan salah satu editor berikut:
+    - **Penjelasan:**
+        - DecimalFormat dalam java di gunakan untuk merubah format decimal dengan pattern tertentu, dan dalam kasus saya menggunakan pattern "#, ###". "#" sebagai penanda angka dan "," sebagai pemisah ribuan contoh: 1,200,000
 
-- **Visual Studio Code:** [Download Visual Studio code](https://code.visualstudio.com/)
-    - Tambahkan extension Java Extension Pack
-- **Intellij IDEA:** [Download Intellij IDEA](https://www.jetbrains.com/idea/)
-- **NetBeans:** [Download NetBeans](https://netbeans.apache.org/front/main/index.html)
+   5. Tampilkan output hasil pembayaran
+        ```java
+        // Output Hasil
+        System.out.println("================================================");
+        System.out.println("            Detail Pembayaran SPP               ");
+        System.out.println("================================================");
+        System.out.println("Nama              : " + nama);
+        System.out.println("NIM               : " + nim);
+        System.out.println("Prodi             : " + prodi);
+        System.out.println("Semester          : " + semester);
+        System.out.println("================================================");
+        System.out.println("Nominal SPP       : Rp. " + df.format(nominalSpp));
+        System.out.println("Pembayaran        : Rp. " + df.format(pembayaran));
+        System.out.println("Kembalian         : Rp. " + df.format(kembali));
+        System.out.println("Kurang            : Rp. " + df.format(kurang));
+        System.out.println("================================================");
+        System.out.println("Status Pembayaran : " + statusPembayaran);
 
-### 4. Buat Project
+### 2. Program Print Paham
 
-**Visual Studio Code:**
+1. **Pertanyaan:**
+    - Buatlah aplikasi untuk menampilkan teks “PAHAM” sebanyak keinginan user.
 
-1.  Buka Visual Studio Code
+2. **Penjelasan Program:**
+   1. Mendapatkan input dari user
+        ```java
+        // panggil class Scanner
+        import java.util.Scanner;
 
-2.  Tekan command ctrl > shift > p untuk membuka command pallete
+        // membuat class object baru dengan nama userInput
+        Scanner userInput = new Scanner(System.in);
 
-3.  Cari Java create program
-    ![Create Java Program](assets/1.png)
-
-4.  Pilih No build tools
-    ![No Build Tools](assets/2.png)
-
-5.  Tentukan path project di simpan
-    ![Path Project](assets/3.png)
-
-6.  Masukkan nama project
-    ![Nama Project](assets/4.png)
-
-### 5. Struktur Folder
-
-1.  Setelah membuat project baru anda akan mendapatkan  struktur folder seperti berikut
-
-    ```bash
-    .
-    └── App/
-        ├── .vscode/
-        │   └── setting.json
-        ├── lib
-        ├── src/
-        │   └── App.java
-        └── README.md
-
-2.  Tambahkan folder bin sehingga menjadi:
-
-    ```bash
-    .
-    └── App/
-        ├── .vscode/
-        │   └── setting.json
-        ├── bin
-        ├── lib
-        ├── src/
-        │   └── App.java
-        └── README.md
-
-**Penjelasan Folder:**
-
-1.  .vscode => Di gunakan untuk mengedit pengaturan dari visual studio code dalam project yang sedang di kerjakan.
-
-2.  bin => Di gunakan untuk menyimpan hasil dari meng compile file.
-
-3.  lib => Di gunakan untuk menyimpan library dari project.
-
-4.  src => Di gunakan untuk menyimpan source code dari project.
-
-### 6. Menjalankan Program java
-
-**Visual Studio code:**
-
-1. Buka terminal/command prompt.
-   
-2. Navigasikan ke direktori project anda.
-   ```bash
-   D:\PROGRAMMER\language\JAVA\App
-   
-3. Compile program java:
-    ```bash
-    javac -d bin src/App.java
+        // mengambil input dari user
+        System.out.print("Masukkan jumlah looping kata: ");
+        int input = userInput.nextInt();
     
-4. Jalankan program java:
-    ```bash
-    java -cp bin src.App
+    - **Penjelasan:**
+        - Scanner dalam java di gunakan untuk membaca input dari user.
+        - System.in adalah cara Scanner untuk mendapatkan input user dari keyboard
+        - nextInt() adalah method Scanner yang di gunakan untuk memasukkan input user ke dalam variabel integer
 
-## 🧩 Catatan Tambahan
-Jika Anda mengalami masalah saat setup atau menjalankan program, silakan ajukan pertanyaan melalui Issues di repository ini.
+   2. Looping kata berdasarkan input
+        ```java
+        // looping kata
+        for(int i = 1; i <= input; i++) {
+            System.out.println("Looping ke -" + i + " : " + word);
+        }
+
+    - **Penjelasan:**
+        - Melakukan looping dengan kondisi, jika i <= input maka cetak "Looping ke -1 : Paham"
