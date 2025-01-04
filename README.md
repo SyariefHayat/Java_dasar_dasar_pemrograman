@@ -1,127 +1,54 @@
-# 📚 Hasil Pembelajaran Java
+# Latihan
 
-Repository ini berisi hasil belajar saya tentang pemrograman Java selama kuliah.
+Folder ini berisi penjelasan singkat dari latihan yang saya dapat di kuliah.
 
-## ⚙️ Setup Sebelum Menjalankan Java
+## Daftar isi
+- [Latihan](#latihan)
+  - [Daftar isi](#daftar-isi)
+    - [1. Program Konversi Nilai](#1-program-konversi-nilai)
 
-### 1. Install JDK
+### 1. Program Konversi Nilai
 
-1. **Unduh JDK**
-    - Kunjungi situs resmi [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) atau gunakan [Open JDK](https://jdk.java.net/).
-    - Pilih versi JDK sesuai kebutuhan, disarankan minimal JDK 17 (LTS).
-  
-2. **Install JDK**
-   - Ekstrak file archive ke direktori pilihan.
+1. **Pertanyaan:**
+    - Buatlah program yang menerima nilai ujian user
+    - Jika nilai 100 - 71 maka nilai "A" & "Lulus"
+    - Jika nilai 70 - 61 maka nilai "B" & "Lulus"
+    - Jika nilai 60 - 0 maka nilai "C" & "Tidak Lulus"
 
-### 2. Set Environment Variable (Path)
+2. **Penjelasan Program:**
+    1. Mendapatkan input nilai dari user
+        ```java
+        import java.util.Scanner;
 
-Sebelum memastikan JDK dapat di gunakan di mana saja pastikan untuk mengingat dimana file direktori JDK di simpan
+        Scanner userInput = new Scanner(System.in);
 
-**Windows:**
+        // deklarasi
+        int nilai;
 
-1. Buka System Properties > Environment Variables > System Variables
-   
-2. Tambahkan path JDK ke dalam Path:
-    ```bash
-    C:\Program Files\java\jdk-23.0.1\bin
-    
-3. Simpan dan restart terminal
-   
-4. Buka terminal/command prompt dan ketik:
-    ```bash
-    java -version
-    javac -version
+        // input nilai user
+        System.out.print("Masukkan Nilai Anda: ");
+        nilai = userInput.nextInt();
 
-5. Output yang di harapkan:
-    ```bash
-    openjdk version "23.0.1" 2024-10-15
-    OpenJDK Runtime Environment (build 23.0.1+11-39)
-    OpenJDK 64-Bit Server VM (build 23.0.1+11-39, mixed mode, sharing)
-    javac 23.0.1
+    - **Penjelasan:**
+        - Scanner dalam java di gunakan untuk membaca input dari user.
+        - System.in adalah cara Scanner untuk mendapatkan input user dari keyboard
+        - nextInt() adalah method Scanner yang di gunakan untuk memasukkan input user ke dalam variabel integer
 
-### 3. Install Editor/IDE untuk java
+    2. Cek nilai user
+        ```java
+        if (nilai > 70 && nilai <= 100) {
+            // jika nilai lebih besar dari 70 dan lebih kecil dari 100
+            System.out.println("Anda mendapat nilai: A");
+            System.out.println("Selamat anda Lulus!");
+        } else if (nilai > 60 && nilai <= 70) {
+            // jika nilai lebih besar dari 60 dan kurang dari 70
+            System.out.println("Anda mendapat nilai: B");
+            System.out.println("Selamat anda Lulus!");
+        } else {
+            // jika nilai lebih kecil dari 60
+            System.out.println("Anda mendapat nilai: C");
+            System.out.println("Maaf anda tidak Lulus!");
+        }
 
-Gunakan salah satu editor berikut:
-
-- **Visual Studio Code:** [Download Visual Studio code](https://code.visualstudio.com/)
-    - Tambahkan extension Java Extension Pack
-- **Intellij IDEA:** [Download Intellij IDEA](https://www.jetbrains.com/idea/)
-- **NetBeans:** [Download NetBeans](https://netbeans.apache.org/front/main/index.html)
-
-### 4. Buat Project
-
-**Visual Studio Code:**
-
-1.  Buka Visual Studio Code
-
-2.  Tekan command ctrl > shift > p untuk membuka command pallete
-
-3.  Cari Java create program
-    ![Create Java Program](assets/1.png)
-
-4.  Pilih No build tools
-    ![No Build Tools](assets/2.png)
-
-5.  Tentukan path project di simpan
-    ![Path Project](assets/3.png)
-
-6.  Masukkan nama project
-    ![Nama Project](assets/4.png)
-
-### 5. Struktur Folder
-
-1.  Setelah membuat project baru anda akan mendapatkan  struktur folder seperti berikut
-
-    ```bash
-    .
-    └── App/
-        ├── .vscode/
-        │   └── setting.json
-        ├── lib
-        ├── src/
-        │   └── App.java
-        └── README.md
-
-2.  Tambahkan folder bin sehingga menjadi:
-
-    ```bash
-    .
-    └── App/
-        ├── .vscode/
-        │   └── setting.json
-        ├── bin
-        ├── lib
-        ├── src/
-        │   └── App.java
-        └── README.md
-
-**Penjelasan Folder:**
-
-1.  .vscode => Di gunakan untuk mengedit pengaturan dari visual studio code dalam project yang sedang di kerjakan.
-
-2.  bin => Di gunakan untuk menyimpan hasil dari meng compile file.
-
-3.  lib => Di gunakan untuk menyimpan library dari project.
-
-4.  src => Di gunakan untuk menyimpan source code dari project.
-
-### 6. Menjalankan Program java
-
-**Visual Studio code:**
-
-1. Buka terminal/command prompt.
-   
-2. Navigasikan ke direktori project anda.
-   ```bash
-   D:\PROGRAMMER\language\JAVA\App
-   
-3. Compile program java:
-    ```bash
-    javac -d bin src/App.java
-    
-4. Jalankan program java:
-    ```bash
-    java -cp bin src.App
-
-## 🧩 Catatan Tambahan
-Jika Anda mengalami masalah saat setup atau menjalankan program, silakan ajukan pertanyaan melalui Issues di repository ini.
+    - **Penjelasan:**
+        - && adalah operator perbandingan yang akan menghasilkan true jika dua kondisi benar dan bernilai false jika salah satu kondisi benar / kedua kondisi salah
